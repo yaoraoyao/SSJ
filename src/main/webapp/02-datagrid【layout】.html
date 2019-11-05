@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<!--导入easyui的核心样式文件-->
+		<link type="text/css" rel="stylesheet" href="easyui/themes/default/easyui.css" />
+		<!--导入easyui的图标样式文件-->
+		<link type="text/css" rel="stylesheet" href="easyui/themes/icon.css" />
+		<!--导入jQuery的核心js文件-->
+		<script type="text/javascript" src="easyui/jquery-1.11.3.min.js"></script>
+		<!--导入easyui的核心js文件-->
+		<script type="text/javascript" src="easyui/jquery.easyui.min.js"></script>
+		<!--导入easyui的汉化包js文件-->
+		<script type="text/javascript" src="easyui/locale/easyui-lang-zh_CN.js"></script>
+		<script type="text/javascript">
+			$(function(){
+				$("#dg").datagrid({
+					url:"employee.json",
+					method:"get",
+					striped:true,		//是否显示斑马线效果
+					nowrap:true,		//如果列的字符串太长，默认是要换行显示，这个属性设置为true表示不换行
+					pagination:true,	//是否显示分页工具栏
+					rownumbers:true,	//是否在表格左侧显示行号[主键id字段的值往往是不连续的，所以搞了一个行号从1开始显示]
+					singleSelect:true,	//是否只能单选，默认可以多选
+					queryParams:{},		//发送请求加载数据的时候的额外请求参数
+					frozenColumns:[[{field:'abcdefg',checkbox:true}]],	//在表格左侧显示多选框，全选、全不选
+					columns:[[    
+				        {field:'id',title:'编号',width:100,hidden:true},    
+				        {field:'name',title:'姓名',width:100,align:"center"},    
+				        {field:'age',title:'年龄',width:100}, 
+				        {field:'phone',title:'电话',width:100},
+				        {field:'gender',title:'性别',width:100,formatter:function(value,row,index){
+				        	//value是当前行当前列的值
+				        	//row是当前行的数据【json对象】
+				        	//index是当前行在整个表格中的索引
+				        	if(value == 1) return "男"; else return "女";
+				        }}
+				    ]]
+				});
+			});
+		</script>
+	</head>
+	<body>   
+		<!--<table class="easyui-datagrid">   
+		    <thead>   
+		        <tr>   
+		            <th data-options="field:'code'">编码</th>   
+		            <th data-options="field:'name'">名称</th>   
+		            <th data-options="field:'price'">价格</th>   
+		        </tr>   
+		    </thead>   
+		    <tbody>   
+		        <tr>   
+		            <td>001</td><td>名称1</td><td>2323</td>   
+		        </tr>   
+		        <tr>   
+		            <td>002</td><td>名称2</td><td>4612</td>   
+		        </tr>   
+		    </tbody>   
+		</table>-->
+		
+		<table id="dg"></table>
+		
+	</body> 
+</html>

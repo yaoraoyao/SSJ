@@ -1,0 +1,38 @@
+[{
+	"id":1,
+	"text":"职位管理",
+	"iconCls":"icon-tree-parent",
+	"children":[{
+		"id":1001,
+		"text":"职位列表",
+		"iconCls":"icon-tree-child",
+		"url":"http://www.baidu.com"
+	}]
+},{
+	"id":2,
+	"text":"员工管理",
+	"iconCls":"icon-tree-parent",
+	"state":"closed",
+	"children":[{
+		"id":2002,
+		"text":"员工列表",
+		"iconCls":"icon-tree-child",
+		"url":"/employee/index.do"
+	},{
+		"id":2003,
+		"text":"员工离职",
+		"iconCls":"icon-tree-child",
+		"url":"http://www.iqiyi.com"
+	}]
+},{
+	"id":3,
+	"text":"轮播管理",
+	"iconCls":"icon-tree-parent",
+	"state":"closed",
+	"children":[{
+		"id":3001,
+		"text":"轮播图列表",
+		"iconCls":"icon-tree-child",
+		"url":"http://www.kugou.com"
+	}]
+}]
